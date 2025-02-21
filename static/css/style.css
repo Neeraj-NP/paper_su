@@ -1,0 +1,57 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.jumbotron {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn {
+    border-radius: 0.25rem;
+}
+
+.alert {
+    margin-bottom: 1rem;
+}
+
+/* Custom styles for the paper cards */
+.paper-card {
+    height: 100%;
+}
+
+.paper-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.paper-card .btn {
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
