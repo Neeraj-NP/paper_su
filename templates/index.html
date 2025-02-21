@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Sitare University Papers Repository</h1>
+    <p class="lead">Access previous year papers and stay updated with hackathon opportunities</p>
+    <hr class="my-4">
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Previous Year Papers</h5>
+                <p class="card-text">Access internal assessment and end semester papers from previous years.</p>
+                <a href="{{ url_for('papers') }}" class="btn btn-primary">Browse Papers</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Upload Papers</h5>
+                <p class="card-text">Contribute to the repository by uploading exam papers.</p>
+                <a href="{{ url_for('upload_paper') }}" class="btn btn-success">Upload Paper</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Hackathon News</h5>
+                <p class="card-text">Stay updated with the latest hackathon opportunities.</p>
+                <a href="{{ url_for('hackathons') }}" class="btn btn-info">View Hackathons</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Previous Year Papers</h2>
+
+<div class="row mb-3">
+    <div class="col">
+        <div class="input-group">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search papers...">
+            <select id="yearFilter" class="form-select">
+                <option value="">All Years</option>
+                {% for year in range(2020, 2025) %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+            <select id="examTypeFilter" class="form-select">
+                <option value="">All Types</option>
+                <option value="internal">Internal Assessment</option>
+                <option value="endsem">End Semester</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    {% for paper in papers %}
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ paper.title }}</h5>
+                <p class="card-text">
+                    <strong>Year:</strong> {{ paper.year }}<br>
+                    <strong>Exam Type:</strong> {{ paper.exam_type }}<br>
+                    <strong>Uploaded:</strong> {{ paper.uploaded_at.strftime('%Y-%m-%d') }}
+                </p>
+                <a href="{{ url_for('static', filename='uploads/' + paper.file_path) }}" 
+                   class="btn btn-primary" target="_blank">
+                    Download Paper
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

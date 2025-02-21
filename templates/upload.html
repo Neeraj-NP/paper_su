@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h2>Upload Paper</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Paper Title</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="year" class="form-label">Year</label>
+                        <select class="form-select" id="year" name="year" required>
+                            {% for year in range(2020, 2025) %}
+                                <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="exam_type" class="form-label">Exam Type</label>
+                        <select class="form-select" id="exam_type" name="exam_type" required>
+                            <option value="internal">Internal Assessment</option>
+                            <option value="endsem">End Semester</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="paper_file" class="form-label">Paper File (PDF)</label>
+                        <input type="file" class="form-control" id="paper_file" name="paper_file" 
+                               accept=".pdf" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Upload Paper</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
